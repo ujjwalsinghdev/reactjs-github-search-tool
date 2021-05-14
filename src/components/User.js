@@ -1,13 +1,17 @@
-import React from "react"
+import React, { useContext } from "react"
+import { GithubContext } from "../context/context"
 import styled from "styled-components"
 import Card from "./Card"
 import Followers from "./Followers"
 const User = () => {
+  const { followers } = useContext(GithubContext)
+  console.log(followers)
+
   return (
     <section className="section">
       <Wrapper className="section-center">
         <Card></Card>
-        <Followers></Followers>
+        {followers.length > 0 && <Followers></Followers>}
       </Wrapper>
     </section>
   )

@@ -11,17 +11,17 @@ const Card = () => {
         <img src={avatar_url} alt={name} />
         <div>
           <h4>{name}</h4>
-          <p>{twitter_username || " twitter username not available"}</p>
+          <p>{twitter_username || null}</p>
         </div>
         <a href={html_url}>follow</a>
       </header>
       <p className="bio">{bio}</p>
       <div className="links">
         <p>
-          <MdBusiness></MdBusiness> {company || "company name not provided"}
+          <MdBusiness></MdBusiness> {company || null}
         </p>
         <p>
-          <MdLocationOn></MdLocationOn> {location || "earth"}
+          <MdLocationOn></MdLocationOn> {location || null}
         </p>
         <a href={`https://${blog}`}>
           <MdLink></MdLink>
@@ -31,6 +31,7 @@ const Card = () => {
     </Wrapper>
   )
 }
+
 const Wrapper = styled.article`
   background: var(--clr-white);
   padding: 1.5rem 2rem;
